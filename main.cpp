@@ -55,7 +55,7 @@ inline void init()
 {
 	allegro_init();
 	set_color_depth(16);
-	set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0, 0);
+	set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 800, 600, 0, 0);
 
 	install_timer();
 	install_keyboard();
@@ -169,7 +169,7 @@ void pintar_tela(int n_jogador, int cor, int tamanho=2){
 void mover_jogador(int n_jogador){
  float velocidade = 2.5;
   if(jogadores[n_jogador].morto==1){
-      velocidade = velocidade/2;
+      velocidade = velocidade*1.5;
   }
                                                       // ou inativo,não faz nada, ou seja ,
   if (jogadores[n_jogador].tecla[0]) jogadores[n_jogador].o-=0.07;           // pula a execução para o próximo jogador
