@@ -124,13 +124,12 @@ int main()
 
             buraco=rand() % 150 + 1;//cria um numero aleatório para o desenho dos buracos na cobra.
             int cor ;
-            if (buraco==1)
+            if (buraco==1){
               tamanho_buraco[p]=0;// 0.66% de chance de sair um buraco por ciclo de desenho
-            else
-               
+            }else{
               cor = (jogadores[p].morto==1 && jogadores[p].tamanho_explosao == 0 ) ? makecol(255, 255, 255) : jogadores[p].cor;
               pintar_tela(p, cor, TAMANHO_JOGADOR);
-
+            }
             if(tamanho_buraco[p]<5)
              {
               circlefill(screen, jogadores[p].x -(2.5*cos(jogadores[p].o)), jogadores[p].y-(2.5*sin(jogadores[p].o)), 2, makecol(0,0,0));//desenha preto para impressão de ser um buraco durante 5 ciclos de desenho
